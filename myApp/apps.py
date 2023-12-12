@@ -8,6 +8,7 @@ from django.apps import AppConfig
 
 class MyappConfig(AppConfig):
     """
+    comment for the git change
     Configuration class for the 'myApp' Django app.
 
     Attributes:
