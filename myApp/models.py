@@ -58,11 +58,11 @@ class Employee(models.Model):
 
     EmpId = models.AutoField(primary_key=True)
     firstName = models.TextField(max_length=40)
-    middleName = models.TextField(max_length=10, null=True)
+    middleName = models.TextField(max_length=10, blank=True)
     lastName = models.TextField()
     emailId = models.TextField()
     mobileNumber = models.TextField()
-    gender = models.CharField(max_length=1, null=True, choices=GENDER_CHOICES)
+    gender = models.CharField(max_length=1, blank=True, choices=GENDER_CHOICES)
     DOB = models.TextField(max_length=40)
     address = models.TextField()
     password = models.TextField(max_length=20)
@@ -85,7 +85,7 @@ class Salary(models.Model):
         created_at (DateTimeField): Timestamp of when the entry was created.
     """
     SalaryId = models.AutoField(primary_key=True)
-    EmpId = models.TextField(null=True)
+    EmpId = models.TextField(blank=True)
     MonthlySalary = models.TextField(max_length=40)
     TotalSalary = models.TextField(max_length=8)
     GrossSalary = models.TextField(max_length=8)
