@@ -5,21 +5,21 @@
 // 1)script to confirm save changes (if exists)
 $(document).ready(function () {
     $("#btn-back").click(function () {
-        var product = $('#product').val();
-        var purchase = $('#purchase').val();
-        var sale = $('#sale').val();
-        var qty = $('#qty').val();
-        var gender = $('#gender').val();
-        var note = $('#note').val();
+        let product = $('#product').val();
+        let purchase = $('#purchase').val();
+        let sale = $('#sale').val();
+        let qty = $('#qty').val();
+        let gender = $('#gender').val();
+        let note = $('#note').val();
 
         //hidden input
 
-        var product2 = $('#product2').val();
-        var purchase2 = $('#purchase2').val();
-        var sale2 = $('#sale2').val();
-        var qty2 = $('#qty2').val();
-        var gender2 = $('#gender2').val();
-        var note2 = $('#note2').val();
+        let product2 = $('#product2').val();
+        let purchase2 = $('#purchase2').val();
+        let sale2 = $('#sale2').val();
+        let qty2 = $('#qty2').val();
+        let gender2 = $('#gender2').val();
+        let note2 = $('#note2').val();
         if ((product != product2) || (purchase != purchase2) || 
         (sale != sale2) || (qty != qty2) || (gender != gender2)
         (note2!=note)) {
