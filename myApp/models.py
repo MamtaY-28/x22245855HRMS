@@ -23,7 +23,7 @@ class ContactUs(models.Model):
     """
     ContactId = models.AutoField(primary_key=True)
     Name = models.TextField(max_length=40)
-    Email = models.TextField(max_length=10, null=True)
+    Email = models.TextField(max_length=10, blank=True)
     ContactNumber = models.TextField(max_length=10)
     CompnayName = models.TextField(max_length=10)
     Message = models.TextField()
