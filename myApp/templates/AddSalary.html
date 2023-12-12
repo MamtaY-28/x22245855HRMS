@@ -13,11 +13,6 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <!-- <div
-                class="card card-body at-5  {% block card-color %} border-dark text-light bg-secondary  {% endblock card-color %}">
-                <span class="text-center">{% block card-title%}Enter Employee Data Below{% endblock card-title%}</span>
-            </div> -->
-            <!--Form-->
             <form {% block action %} action="/add_salary" {% endblock action %} method="POST"
                 enctype="multipart/form-data" autocomplete="off" class="card p-3 border-dark pt-3">
                 {% csrf_token %}
@@ -68,11 +63,6 @@
 
                 <!-- block btn save-hidden (denied here)-->
                 {% block btn-saveHidden %} {% endblock btn-saveHidden %}
-
-                <!-- Button trigger modal -->
-                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveModal1">
-     Launch demo modal
-  </button> -->
 
                 <!-- Modal -->
                 <div class="modal fade" id="saveModal1" tabindex="-1" aria-labelledby="saveModalLabel"
