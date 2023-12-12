@@ -1,6 +1,5 @@
 # from imp
 from django.shortcuts import render
-#from myPython import product
 from myApp.models import Employee
 from myApp.models import Salary
 from django.http import HttpResponseRedirect
