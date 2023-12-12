@@ -1,0 +1,86 @@
+/*-----------------------------------
+#Start Configuration
+---------------------------*/
+html,
+body {
+    height: 100%;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden
+}
+
+/*-----------------------------------
+#footer Configuration
+---------------------------*/
+.wrapper{
+    min-height: 100%;
+    margin-bottom:-50px;
+}
+
+#footer,
+.push{
+    height:50px;
+}
+
+/*-----------------------------------
+#others Configuration
+---------------------------*/
+.side-label{
+    width: 45px;
+}
+
+
+/*-----------------
+custom sweetAlert
+-----------------------*/
+.swal-modal{
+    background-color: rgb(0,0,0,651);
+    color: #fff;
+}
+
+.swal-text{
+    color:#fff;
+    font-size: 15px;
+}
+
+swal-title{
+    color: #fff;
+    font-size: 15px;
+}
+
+.swal-icon--success:before
+.swal-icon--success:after
+.swal-icon--success_hide-corners{
+    background-color: none !important;
+}
+
+.swal-icon--success{
+    border-color: #ffc107;
+}
+
+.swal-icon--sucess_line{
+    border-color: #ffc107;
+}
+
+.swal-button{
+    padding: 7px 19px;
+    border-radius: 5px;
+    background-color: #ffc107;
+    font-size: 12px;
+    border:1px solid #ffc107;
+    color:#111
+}
+
+.swal-button:focus{
+    box-shadow: none;
+}
+
+.swal-button:not([disabled]):hover{
+    background:transparent;
+    color:#fff;
+    border:1px solid #ffc107
+}
+
+.menu-color{
+    background-color: #04AA6D;
+}

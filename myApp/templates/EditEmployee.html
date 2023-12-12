@@ -1,0 +1,64 @@
+{% extends 'AddEmployee.html' %}
+
+<!--title on tab browser-->
+{% block title} Edit Employee {% endblock title}
+
+<!--navbar content-->
+{% block navbar-content %}
+<i class="text-warning fas fa-plus">&nbsp;&nbsp; Edit Employee</i>
+{% endblock navbar-content %}
+
+<!--Block Color card and title-->
+{% block card-color %} border-dark-bg-warning  {% endblock card-color %}
+{% block card-title%} <strong> Registered at:</strong><span> {{employee.created_at | date:'m/d/y'}}</span> {% endblock card-title%}
+
+<!--form Action-->
+{% block action %} action="/edit_employee"  {% endblock action %}
+
+<!--button Action-->
+{% block btn-action %}
+<button type="submit" class="btn btn-secondary mb-3 btn-action">
+    <i class="fas fa-server">&nbsp;&nbsp; Save Changes</i> 
+</button>
+{% endblock btn-action %}
+<!--===============INPUTS==============================-->
+
+<!--Id-->
+<!-- <input type="text" class="form-control" name="EmpId" readonly value="{{employee.EmpId}}" > -->
+{% block value-EmpId %}
+
+    <input type="text" class="form-control" name="EmpId" readonly value="{{employee.EmpId}}" style="display: none;">
+
+{% endblock value-EmpId %}
+
+<!--First Name-->
+{% block value-firstName %} value="{{employee.firstName}}" {% endblock value-firstName %}
+
+<!--Middle Name-->
+{% block value-middleName %} value="{{employee.middleName}}" {% endblock value-middleName %}
+
+<!--Last Name-->
+{% block value-lastName %} value="{{employee.lastName}}" {% endblock value-lastName %}
+
+<!--Email Id-->
+{% block value-emailId %} value="{{employee.emailId}}" {% endblock value-emailId %}
+
+<!--Mobile Number-->
+{% block value-mobileNumber %} value="{{employee.mobileNumber}}" {% endblock value-mobileNumber %}
+
+<!--Gender-->
+{%block option %}
+<option style="background-color:#d3d3d3; color:#111;">{{employee.gender}}</option>
+{%endblock option %}
+
+<!--DOB-->
+{%block DOB %}
+{% block value-DOB %} value="{{employee.DOB}}" {% endblock value-DOB %}
+{%endblock DOB %}
+
+<!--Address-->
+{%block address %} {{employee.address}} {%endblock address%}
+
+<!--Password-->
+<!-- {%block password %} value="{{employee.password}}" {%endblock password%} -->
+{% block value-password %} value="{{employee.password}}" {% endblock value-password %}

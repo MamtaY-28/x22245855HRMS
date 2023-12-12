@@ -1,0 +1,80 @@
+
+{% extends 'base.html' %}
+
+<!--navbar content-->
+{% block navbar-content %}
+<a class="dropbtn" href="{% url 'home' %}">Home </a> &nbsp;
+<div class="dropdown">
+    <button class="dropbtn">Employee Management</button>
+    <div class="dropdown-content">
+      <a href="{% url 'EmployeeList' %}">Add/View Employee</a>
+    </div>
+  </div> 
+
+  <div class="dropdown">
+    <button class="dropbtn">Salary Management</button>
+    <div class="dropdown-content">
+      <a href="{% url 'SalaryList' %}">Add/View Salary </a>
+    </div>
+  </div> 
+
+  <a class="dropbtn" href="{% url 'ContactUs' %}" >Contact Us For Demo </a> &nbsp;
+
+{% endblock navbar-content %}
+
+
+<!--page Content-->
+{% block content %}
+<div class="container">
+    <br><br>
+    <a href="{% url 'add_salary' %}" class="btn btn-outline-secondary btn-sm"><i class="fas fa-plus">&nbsp;
+            &nbsp;Add Salary
+        </i></a>
+    <table class="table table-boarded table-sm at-4" style="text-align: center;font-size: 14px;">
+        <thead class="table-warning">
+            <tr>
+                <th style="width: 20%;">EmpId</th>
+                <th style="width: 15%;">Total Salary</th>
+                <th style="width: 15%;">MonthlySalary</th>
+                <th style="width: 10%;">GrossSalary</th>
+                <th style="width:10%;">TaxSlab</th>
+                <th style="width: 10%;">Registered</th>
+                <th colspan="2" style="width: 10%;">Actions</th>
+            </tr>
+        </thead>
+        {% for sal in salarys %}
+        <tr>
+            <td>{{sal.EmpId}}</td>
+            <td>{{sal.TotalSalary}}</td>
+            <td>{{sal.MonthlySalary}}</td>
+            <td>{{sal.GrossSalary}}</td>
+            <td>{{sal.TaxSlab}}</td>
+            <td>{{emp.created_at | date:'m/d/y'}}</td>
+            <td>
+                <a href="/salary/{{sal.SalaryId}}" class="btn btn-warning" title="Edit Salary">
+                    <i class="fas fa-pen"></i>
+                </a>
+
+                <a href="/delete_salary/{{sal.SalaryId}}" class="btn btn-warning" title="delete Salary">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        <table>
+
+           
+</div> <!--end of container-->
+
+<!--messages from backend-->
+{% for message in messages %}
+   {% if message.tags == 'success' %}
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+     var r="{{message}}";
+     swal("perfect !",r,"success")
+     </script>
+    {% endif %}
+ {% endfor %}  
+
+ {% endblock content %}

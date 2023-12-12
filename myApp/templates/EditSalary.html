@@ -1,0 +1,52 @@
+{% extends 'AddSalary.html' %}
+
+<!--title on tab browser-->
+{% block title} Edit Salary {% endblock title}
+
+<!--navbar content-->
+{% block navbar-content %}
+<i class="text-warning fas fa-plus">&nbsp;&nbsp; Edit Salary</i>
+{% endblock navbar-content %}
+
+<!--Block Color card and title-->
+{% block card-color %} border-dark-bg-warning  {% endblock card-color %}
+{% block card-title%} <strong> Registered at:</strong><span> {{salary.created_at | date:'m/d/y'}}</span> {% endblock card-title%}
+
+<!--form Action-->
+{% block action %} action="/edit_salary"  {% endblock action %}
+
+<!--button Action-->
+{% block btn-action %}
+<button type="submit" class="btn btn-secondary mb-3 btn-action">
+    <i class="fas fa-server">&nbsp;&nbsp; Save Changes</i> 
+</button>
+{% endblock btn-action %}
+<!--===============INPUTS==============================-->
+
+<!--Id-->
+<!-- <input type="text" class="form-control" name="EmpId" readonly value="{{employee.EmpId}}" > -->
+{% block value-SalaryId %}
+
+    <input type="text" class="form-control" name="SalaryId" readonly value="{{salary.SalaryId}}" style="display: none;">
+
+{% endblock value-SalaryId %}
+
+<!--First Name-->
+{% block value-EmpId %} value="{{salary.EmpId}}" {% endblock value-EmpId %}
+
+<!--Middle Name-->
+{% block value-MonthlySalary %} value="{{salary.MonthlySalary}}" {% endblock value-MonthlySalary %}
+
+<!--TotalSalary-->
+{% block value-TotalSalary %} value="{{salary.TotalSalary}}" {% endblock value-TotalSalary %}
+
+<!--GrossSalary-->
+{% block value-GrossSalary %} value="{{salary.GrossSalary}}" {% endblock value-GrossSalary %}
+
+<!--TaxSlab-->
+{% block value-TaxSlab %} value="{{salary.TaxSlab}}" {% endblock value-TaxSlab %}
+
+<!--Gender-->
+<!-- {%block option %}
+<option style="background-color:#d3d3d3; color:#111;">{{employee.gender}}</option>
+{%endblock option %} -->

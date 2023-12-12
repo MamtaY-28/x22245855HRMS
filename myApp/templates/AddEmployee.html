@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+<!--title on tab browser-->
+{% block title} Add Employee {% endblock title}
+
+<!--navbar content-->
+{% block navbar-content %}
+<i class="text-warning fas fa-plus">&nbsp;&nbsp; Add Employee</i>
+{% endblock navbar-content %}
+
+<!--page content-->
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- <div
+                class="card card-body at-5  {% block card-color %} border-dark text-light bg-secondary  {% endblock card-color %}">
+                <span class="text-center">{% block card-title%}Enter Employee Data Below{% endblock card-title%}</span>
+            </div> -->
+            <!--Form-->
+            <form {% block action %} action="/add_employee" {% endblock action %} method="POST"
+                enctype="multipart/form-data" autocomplete="off" class="card p-3 border-dark pt-3">
+                {% csrf_token %}
+
+                <!--block id (hidden here) ====-->
+                {% block value-EmpId %}{% endblock value-EmpId %}
+
+                <div class="input-group mb-3">
+                    <input type="text" id="firstName" class="form-control" name="firstName"
+                        placeholder="First Name" required {% block value-firstName %}{% endblock value-firstName %}>
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <input type="text" id="middleName" class="form-control" name="middleName"
+                        placeholder="Middle Name" required {% block value-middleName %}{% endblock value-middleName %}>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" id="lastName" class="form-control" name="lastName"
+                        placeholder="Last Name" required {% block value-lastName %}{% endblock value-lastName %}>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="email" id="emailId" class="form-control" name="emailId" 
+                        placeholder="Email Id" required {%block value-emailId %}{% endblock value-emailId %} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+               &nbsp;&nbsp;
+                        <input type="text" id="mobileNumber" class="form-control" name="mobileNumber" maxlength="10"
+                        placeholder="Mobile Number" required {%block value-mobileNumber %}
+                        {% endblock value-mobileNumber%}>
+                </div>
+
+                <div class="input-group mb-3">
+                    <select id="gender" class="form-select" name="gender" required>
+                        {% block option %}
+                        <option value="" hidden>Select the gender</option>
+                        {% endblock option %}
+                        <option disabled></option>
+                        <option>M</option>
+                        <option>F</option>
+                        <option>O</option>
+                    </select>
+                </div>
+                
+                <div class="input-group mb-3">
+                    <input type="date" id="DOB" class="form-control" name="DOB"
+                        placeholder="DOB" required {%block value-DOB %}{% endblock value-DOB %}>
+                </div>
+
+                <div class="form-group">
+                    <span>Address</span>
+                    <textarea class="form-control" name="address" id="address" maxlength="1000"
+                        placeholder="Description is optional....">{% block address %} {% endblock address %}</textarea>
+                </div>
+                <br>
+                <div class="input-group mb-3">
+                    <input type="password" id="password" class="form-control" name="password" maxlength="10"
+                        placeholder="Password" required {%block value-password %}{% endblock value-password %}>
+                </div>
+
+                <div class="mt-4" style="width: 100%;">
+                    {% block btn-action %}
+                    <button type="submit" class="btn btn-secondary mb-3">
+                        <i>&nbsp;&nbsp; Add Employee</i>
+                    </button>
+                    {% endblock btn-action %}
+                    <a href="{% url 'EmployeeList' %}" {%block btn-back %} {% endblock btn-back %}
+                        class="btn btn-outline-dark mb-3 ms-2" style="width:50px" title="back">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <button type="reset" class="btn btn-outline-dark mb-3 ms-2" style="width:50px" title="reset">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+
+                <!-- block btn save-hidden (denied here)-->
+                {% block btn-saveHidden %} {% endblock btn-saveHidden %}
+
+                <!-- Button trigger modal -->
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveModal1">
+     Launch demo modal
+  </button> -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="saveModal1" tabindex="-1" aria-labelledby="saveModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="saveModalLabel"><i class="fas fa-hdd"> </i>&nbsp;&nbsp;Save
+                                    changes?</h6>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <div class="text-center text-secondary mt-3">
+                                    <span class="fa-stack fa-3x">
+                                        <i class="fas fa-cloud fa-stack-2x"></i>
+                                        <i class="fas fa-hdd fa-stack-1x fa-inverse"></i>
+                                    </span>
+
+                                </div>
+                                <div class="mb-3 mt-3">Would you like to save changes?</div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="{%url 'EmployeeList' %}" class="btn btn-outline-dark btn-sm"
+                                    style="width:70px">No</a>
+                                <button type="submit" class="btn btn-secondary btn-sm" style="width:70px">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-------=======Block Save change==================----------------->
+{%block save-change %}
+
+{%endblock save-change %}
+{%endblock content %}
