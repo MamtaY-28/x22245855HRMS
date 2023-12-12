@@ -24,7 +24,6 @@
 <!--===============INPUTS==============================-->
 
 <!--Id-->
-<!-- <input type="text" class="form-control" name="EmpId" readonly value="{{employee.EmpId}}" > -->
 {% block value-SalaryId %}
 
     <input type="text" class="form-control" name="SalaryId" readonly value="{{salary.SalaryId}}" style="display: none;">
@@ -45,8 +44,3 @@
 
 <!--TaxSlab-->
 {% block value-TaxSlab %} value="{{salary.TaxSlab}}" {% endblock value-TaxSlab %}
-
-<!--Gender-->
-<!-- {%block option %}
-<option style="background-color:#d3d3d3; color:#111;">{{employee.gender}}</option>
-{%endblock option %} -->
