@@ -68,8 +68,10 @@ $('#note','#note2').on("keyup",function(){
 
 $(document).ready(function(){
     $('.btn-action'.prop('disabled',true));
+    var gender = $("#gender").val();
+    var gender2 = $("#gender2").val();
     $('#gender','gender2').change(function(){
-        if(($("#gender").val()==($("#gender").val()))){
+        if((gender==gender2)){
             $(".btn-action").attr("disabled","disabled");
         }
         else{
