@@ -84,3 +84,11 @@ swal-title{
 .menu-color{
     background-color: #04AA6D;
 }
+
+main {
+    padding: 1em;
+}
+
+section {
+    margin-bottom: 2em;
+}
